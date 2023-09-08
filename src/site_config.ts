@@ -3,7 +3,7 @@
 // Metadata, SEO, and Social
 export const SITE_TITLE = "Hachi Programming Language"
 export const SITE_DESCRIPTION = "Learn About the Hachi Programming Language"
-export const SITE_URL = "https://takkotheboss.github.io/"
+export const SITE_URL = "https://takkotheboss.github.io/hachilang"
 export const SITE_DEFAULT_OG_IMAGE = "/assets/og-image.png"
 
 // Docs Sidebar
