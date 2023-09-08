@@ -1,8 +1,8 @@
 // This file contains the site configuration for the theme.
 
 // Metadata, SEO, and Social
-export const SITE_TITLE = "Manual Theme"
-export const SITE_DESCRIPTION = "A documentation template for Astro"
+export const SITE_TITLE = "Hachi Programming Language"
+export const SITE_DESCRIPTION = "Learn About the Hachi Programming Language"
 export const SITE_URL = "https://takkotheboss.github.io/"
 export const SITE_DEFAULT_OG_IMAGE = "/assets/og-image.png"
 
