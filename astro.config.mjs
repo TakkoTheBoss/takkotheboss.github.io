@@ -6,7 +6,7 @@ import { SITE_URL } from './src/site_config';
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  base: '/hachi-lang',
+  base: '',
   integrations: [tailwind(), sitemap()],
   vite: {
     plugins: [rawFonts(['.ttf'])],
