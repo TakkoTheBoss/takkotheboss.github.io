@@ -19,8 +19,14 @@ export const SIDEBAR_ITEMS = {
     "/docs/hlang/controls",
     "/docs/hlang/functions",
   ],
-  "Libraries": [
-    "/docs/libraries/core.md",
+  "Core Library": [
+    "/docs/modules/calc",
+    "/docs/modules/dt",
+    "/docs/modules/fs",
+    "/docs/modules/net",
+    "/docs/modules/os",
+    "/docs/modules/re",
+    "/docs/modules/so",
   ],
   //"Tutorials": [
   //  "/docs/tutorials/build-x",
