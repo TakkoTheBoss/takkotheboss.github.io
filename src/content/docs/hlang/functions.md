@@ -126,6 +126,17 @@ Pauses execution by a determined number of seconds.
 
     sleep: 8
 
+## hcmd
+Hachi CMD - runs a given shell command on host operating system.
+
+*Syntax*:
+
+    hcmd: <command-to-execute>
+
+*Example*:
+
+    hcmd: "cat /etc/os-release"
+
 # Type Conversion
 These are built-in functions to convert the type of a given value. Type value to be converted can be given as a right-side or left-side input.
 
