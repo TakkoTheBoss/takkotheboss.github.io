@@ -13,6 +13,7 @@ export const SIDEBAR_ITEMS = {
   "Get Started": [
     "/docs/get-started/introduction",
     "/docs/get-started/installation",
+    "/docs/get-started/issues"
   ],
   "Language": [
     "/docs/hlang/syntax",
