@@ -1,5 +1,5 @@
 ---
-title: Built-In Functions
+title: Built-In Functions & Literals
 ---
 
 Built-in functions and constructs in Hachi are very light, with the core library accommodating any functions you'd need. For example, Hachi has a built-in `print` function, and then also has a string split function (`strSplit`) which needs to be imported from "String Operations" (so) module in the core library. The latter will be covered in the "Libraries" section. But a list if language level functions and constructs are below.
@@ -285,3 +285,52 @@ A data structure used as a collection of string values.
 *Example*:
 
     myArray: StringArray.set: 6, "Nine"
+
+# Literals
+
+## tru
+`tru` is True.
+
+*Syntax*:
+
+    tru
+
+*Example*:
+
+    isDaytime: tru
+    isDaytime ? # or isDaytime = tru?
+    (
+        print: "It is Daytime"
+    )
+
+## fls
+`fls` is False.
+
+*Syntax*:
+
+    fls
+
+*Example*:
+
+    isDaytime: fls
+    isDaytime = fls ?
+    (
+        print: "It is not Daytime"
+    )
+
+## arg
+Involves the use or arguments in your code.
+
+*Syntax*:
+
+    arg
+
+*Example*:
+
+    print: "there are " + argLen.String + " args."
+
+    aLen: argLen 
+
+    i: 0 | i < aLen | i: i + 1 @ (
+        print: arg: i
+    )
