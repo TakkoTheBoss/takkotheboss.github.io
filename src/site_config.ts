@@ -15,6 +15,9 @@ export const SIDEBAR_ITEMS = {
     "/docs/get-started/installation",
     "/docs/get-started/issues"
   ],
+  "How-To": [
+    "/docs/howto/use",
+    ],
   "Language": [
     "/docs/hlang/syntax",
     "/docs/hlang/controls",

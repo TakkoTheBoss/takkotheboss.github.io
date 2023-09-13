@@ -137,6 +137,17 @@ Hachi CMD - runs a given shell command on host operating system.
 
     hcmd: "cat /etc/os-release"
 
+## argLen
+Returns count of arguments passed to Hachi program.
+
+*Syntax*:
+
+    argLen
+
+*Example*:
+
+    print: argLen
+
 # Type Conversion
 These are built-in functions to convert the type of a given value. Type value to be converted can be given as a right-side or left-side input.
 
