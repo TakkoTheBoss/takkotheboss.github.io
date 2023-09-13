@@ -38,11 +38,12 @@ These are current features present in this implementation:
 * User input
 * Running system commands
 * AnyT type (equivalent to templates or generics in other languages)
-* Arrays of any type
 * Pass-by-reference
 * Various programming patterns
 * Operator overloading
 * File importing
+* Lambda functions
+* Anonymous functions
 
 ### Hachi Features
 - Run C++ code inside of Hachi files.
