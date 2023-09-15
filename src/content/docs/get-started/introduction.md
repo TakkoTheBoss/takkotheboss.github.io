@@ -9,7 +9,7 @@ title: Introduction to Hachi
 
 Hachi aims to feel like a more dynamic & high(er-ish)-level language while delivering the performance of a compiled one. It's a memory safe and statically typed compiled language. And it's pretty dope bro. Core features are functional and ready, it's just currently undergoing semi-rapid development of it's core library. It takes the "Bucket of Legos" approach, where language components are simple to use and easy to implement by means of just sorta sticking things together in whatever programming patterns you want to (Object-oriented, Procedural, Functional, etc for the most part). It's not very rigid, rather more of a free-spirited style of language.
 
-I've done my best to yeet as many foot-guns possible at this time.
+I've done my best to yeet as many foot-guns possible at this time. As Hachi is under rapid development, if any more foot-guns are found, those will be yeeted as applicable.
 
 ![Hachi Logo](/hachi-help-screen.png "Hachi Help Screen" )
 
