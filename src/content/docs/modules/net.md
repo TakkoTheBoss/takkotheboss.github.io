@@ -18,11 +18,11 @@ This submodule provides capability to send http requests to a server.
 
 *Syntax*:
 
-    rqheavy: <http-method>, <url>, <user-agent>, <payload>
+    rqheavy: <http-method>, <url>, <user-agent>, <payload>, <content-type>
 
 *Example*:
 
-    rre: rqheavy: "GET", "https://takkotheboss.github.io", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36", "asdfasd", "application/json"
+    rre: rqheavy: "GET", "https://takkotheboss.github.io", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36", "\"key\": \"value\", "application/json"
     rcode: rre.a
     rheaders: rre.b
     rbody: rre.c
