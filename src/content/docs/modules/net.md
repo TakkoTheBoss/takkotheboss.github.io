@@ -11,7 +11,7 @@ This contains the submodules for the Networking module of the core library.
 This submodule provides capability to send http requests to a server.
 
 ### Submodule Functions
-#### *reqheavy*
+#### *rqheavy*
 - HTTP Request containing: HTTP Method; URL; User Agent; Payload; Content Type.
 - Returns: Response Code; Response Headers; Response Body.
 - Notes: If the request method is anything other than "POST" then leave payload as an empty string.
