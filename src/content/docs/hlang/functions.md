@@ -1,5 +1,5 @@
 ---
-title: Built-In Functions & Literals
+title: Built-In Keywords & Functions
 ---
 
 Built-in functions and constructs in Hachi are very light, with the core library accommodating any functions you'd need. For example, Hachi has a built-in `print` function, and then also has a string split function (`strSplit`) which needs to be imported from "String Operations" (so) module in the core library. The latter will be covered in the "Libraries" section. But a list if language level functions and constructs are below.
