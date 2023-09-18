@@ -180,7 +180,7 @@ No input and No output.
 
 The examples can go on to include both left-side and right-side input parameters as well.
 
-#### Parameters and Return Values
+#### Parameters
 
 In the function signature, you can assign your input parameters and return values.
 

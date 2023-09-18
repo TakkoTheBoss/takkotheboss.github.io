@@ -79,32 +79,17 @@ Runs Hachi command with a visual debug output including AST and AT.
 # Arguments & Run Styles
 Hachi programs can be passed arguments for use in CLI utilities, etc. Here we will show the 2 *run styles* and how they handle arguments.
 
-## -e/-execute
-This is similar to [`go run`](https://pkg.go.dev/cmd/go/internal/run) in the Go programming language, where this a one-liner Hachi command compiles and executes the program. When used with arguments, be sure to offset args by 3 in your code.
+## -g/-go
+This is a one-liner Hachi command compiles and executes the program. When used with arguments, be sure to offset args by 3 in your code.
 
 *Syntax*:
 
-    hachi <filename>.8 -e <arguments>
+    hachi <filename>.8 -go <arguments>
 
 *Example*:
 
-    hachi cliArgs.8 -e These Are Arguments
+    hachi cliArgs.8 -go These Are Arguments
 
 *Screenshot*:
 
-![Hachi Args](/hachiExecuteSample.png "Hachi Args" )
-
-## -r/-run
-Runs program with interpreter. Although interpreter is default use with naked `hachi` command, -r is necessary to pass in arguments. Currently the filename is considered an argument, so be sure to offset args by 1 in your code.
-
-*Syntax*:
-
-    hachi <filename>.8 -r <arguments>
-
-*Example*:
-
-    hachi cliArgs.8 -r These Are Arguments
-
-*Screenshot*:
-
-![Hachi Args](/hachiArgSample.png "Hachi Args" )
+![Hachi Go Args](/hachi-go-args.png "Hachi Go with Args" )
