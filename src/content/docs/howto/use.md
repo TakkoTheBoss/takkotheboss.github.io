@@ -14,11 +14,7 @@ That's it. It's suggested that your Hachi executable be placed in your PATH some
 
 After installing Hachi, you probably gonna want to run this puppy. So to start off, you can simply run `hachi -h` to see all commands you can run. Here we'll cover general commands to use.
 
-Currently Hachi has 2 modes of use, one being compiled and the other being interpreted. If you run the naked `hachi` command with a filename, hachi will attempt to run that program. This will only work if there is no dropped-in C++ code present in the file. For example, most core library modules contain C++ bindings, and cannot be ran via interpreted mode.
-
-Hachi is a compiled language first, where the interpreter is used to more for either scripting or testing.
-
-# Compiled
+# Compile
 
 ## -build
 This builds the executable from a defined Hachi file.
@@ -33,18 +29,6 @@ This builds the executable from a defined Hachi file.
     hachi sk.8 -build skate
     # Run "skate"
     ./skate
-
-# Interpreted
-Use the naked `hachi` command followed by the file.
-
-*Syntax*:
-
-    hachi <filename>.8
-
-*Example*:
-
-    hacho code.8
-
 
 # More Commands
 
@@ -76,8 +60,8 @@ Runs Hachi command with a visual debug output including AST and AT.
 
 ![Hachi Debug](/hachiDebugSample.png "Hachi Debug" )
 
-# Arguments & Run Styles
-Hachi programs can be passed arguments for use in CLI utilities, etc. Here we will show the 2 *run styles* and how they handle arguments.
+# Run
+Hachi files can be ran instead of compiled, similar to how Go's `go run` command works. In short, it compiles the Hachi file and executes it.
 
 ## -g/-go
 This is a one-liner Hachi command compiles and executes the program. When used with arguments, be sure to offset args by 3 in your code.
