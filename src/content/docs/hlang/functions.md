@@ -1,8 +1,8 @@
 ---
-title: Built-In Keywords & Functions
+title: Keywords and Built-In Functions
 ---
 
-Built-in functions and constructs in Hachi are very light, with the core library accommodating any functions you'd need. For example, Hachi has a built-in `print` function, and then also has a string split function (`strSplit`) which needs to be imported from "String Operations" (so) module in the core library. The latter will be covered in the "Libraries" section. But a list if language level functions and constructs are below.
+Built-in functions and constructs in Hachi are very light, with the core library accommodating any functions you'd need. For example, Hachi has a built-in `print` function, and then also has a string split function (`strSplit`) which needs to be imported from "String Operations" (so) module in the core library. The latter will be covered in the "Libraries" section. But a list of language level functions and constructs are below.
 
 # Functions
 ## print
@@ -319,7 +319,9 @@ A data structure used as a collection of string values.
     )
 
 ## arg
-Involves the use or arguments in your code.
+***WARNING: Arguments are handled in the `sys/arg` module, which simplifies use of the "arg" keyword across various use-cases. Where otherwise, any raw-dogging of the "arg" keywork outside of the aforementioned module will introduce hidden potholes and footguns related to parsing arguments manually.***
+
+Involves the use or arguments in your code. 
 
 *Syntax*:
 
@@ -334,3 +336,54 @@ Involves the use or arguments in your code.
     i: 0 | i < aLen | i: i + 1 @ (
         print: arg: i
     )
+
+# Interoperability with C++
+Using the `innerCPP` and `outerCPP` Hachi functions allow you to make use of C++ code inside of your Hachi scripts. Essentially, you can do use this to do whatever you'd want to do i C++, or supplement your code with Hachi Bindings.
+
+## innerCPP
+C++ code defined in `innerCPP` will be inside of the main function of the transpiled code.
+
+*Syntax*:
+
+    innerCPP: "<YOUR C++ CODE HERE>"
+
+*Example*:
+
+    innerCPP: "std::cout << \"Here is some C++ code!!\" << std::endl;"
+
+## outerCPP
+C++ code defined in `outerCPP` will be outside of the main function of the transpiled code.
+
+*Syntax*:
+
+    outerCPP: "<YOUR C++ CODE HERE>"
+
+*Example*:
+
+    outerCPP:"
+    #include <fstream>
+    #include <string>
+    "
+
+## Hachi Bindings
+You can integrate C++ code into your code's functions as shown in the example below. 
+
+*Example*:
+
+    # This is a sample function from the fs module.
+    file_Write:: {Filename,FileInput}: (
+    filename: Ri.fName
+    input: Ri.fInput
+    innerCPP: "
+        std::string input(reinterpret_cast<char const*>(input._data), input._size);
+        std::ofstream outputFile(reinterpret_cast<char const*>(filename._data), filename._size);
+        if (outputFile.is_open()) {
+            outputFile << input;
+            outputFile.close();
+            return 0;
+        } else {
+            return 1;  // Error opening the file
+        }
+    "
+    )
+

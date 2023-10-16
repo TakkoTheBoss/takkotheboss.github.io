@@ -142,7 +142,7 @@ Functions are declared the same as constants are. Function name + 2 colons `::` 
         <function-body>
     )
 
-Functions can create your function signature with:
+You can create functions with:
 - Some input
 - No input
 - Some return output
@@ -168,7 +168,7 @@ Some input and no output.
 
 No input and some output.
 
-    function:: {}->{String}:(
+    function:: {}->{Int}:(
         6+9
     )
 
@@ -184,7 +184,8 @@ The examples can go on to include both left-side and right-side input parameters
 
 In the function signature, you can assign your input parameters and return values.
 
-##### Input Parameters:
+
+##### **Input Parameters**
 
 Input parameters can be either a type declaration, an named input element with an assigned type, or a struct which inherits the types of it's assigned elements.
 
@@ -361,7 +362,7 @@ Hachi supports Function Overloading, where your program can have multiple functi
 
 #### Lambda Functions
 
-Hachi has Lambda Functions. 
+Hachi supports Lambda & Anonymous Functions. 
 
 *Lambda Function Sample*
 Here we are passing a lambda function as an input parameter to function **testFunc**.
@@ -373,6 +374,17 @@ Here we are passing a lambda function as an input parameter to function **testFu
     testFunc: ({}->{Int}:(4-2))
 
 This would print **2**.
+
+*Anonymous Function Sample*
+Here we are passing an anonymous function as an input parameter to function **testFunc**.
+
+    testFunc:: {Int}: (
+        print: Ri
+    )
+
+    testFunc: ({}->{Int}:(4-2))*6
+
+This would print **12**.
 
 #### Misc
 Previously mentioned statements don't require any delimiters, indentation, etc. You may run an entire function, array, etc, on just one line.
