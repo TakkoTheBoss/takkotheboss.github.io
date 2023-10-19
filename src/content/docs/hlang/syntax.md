@@ -13,6 +13,7 @@ _Example:_
 ```
 
 ## Multi Line Comments
+Comments for multiple lines start with "//" and end with "\\\\".
 
 _Example:_
 
@@ -64,7 +65,6 @@ Writing code in Hachi is simple, as many things are intuitive and _deductive_.
 Accessing variables and calling functions which take no input are the same.
 
 ```
-...
 # A var.
 var1
 
@@ -75,18 +75,19 @@ func1
 Setting a variable and calling a function with a single input are the same.
 
 ```
-...
 # This is how to set var.
 var1: "This is my variable."
 
 # This is how to call a function with a single input.
 function1: <Input goes here>
+
+# This is how to set a function as a variable.
+var: function: <Input goes here>
 ```
 
 Creating a tuple and calling a function which takes in multiple arguments are the same.
 
 ```
-...
 # This is how to create a tuple
 varTuple: 69,-4.20,fls
 
@@ -119,7 +120,7 @@ definedStructureExample :: {
 ```
 
 #### Undefined
-You may choose to leave undefined, which will work fine and each element will be assigned as `a`, `b`, `c`, etc.
+You may choose to leave undefined, which will work fine and each element will be accessed with dot-notation and assigned as `a`, `b`, `c`, etc.
 
     definedStructureExample :: {
         Int
@@ -134,11 +135,21 @@ undefineStructureExample :: {Int, Bool, String}
 
 ### Functions
 
-Functions are declared the same as constants are. Function name + 2 colons `::` and then the rest of function signature (input parameters and return values).
+Functions are declared the same as constants are. Function name + 2 colons `::` and then the rest of function signature (input parameters and return values). But you may also declare a function as a variable as well.
 
 #### Function Signature
 
+##### Define as constant
+Double Colon.
+
     <function-name> :: <input-parameters> -> <return-values> : (
+        <function-body>
+    )
+
+##### Define as Variable
+Single Colon.
+
+    <function-name> : <input-parameters> -> <return-values> : (
         <function-body>
     )
 
@@ -189,7 +200,7 @@ In the function signature, you can assign your input parameters and return value
 
 Input parameters can be either a type declaration, an named input element with an assigned type, or a struct which inherits the types of it's assigned elements.
 
-Access right-side input parameters with `Ri`, and `Li` with left-side input parameters. If there are both left side and right-side input, they're separated with a `.` period character.
+Access right-side input parameters with `Ri` (Right-Input), and `Li` (Right-Input) with left-side input parameters. If there are both left side and right-side input, they're separated with a `.` period character.
 
 When using multiple input parameters, you can delimit the parameters with either a comma, a space, or a semi-colon.
 
