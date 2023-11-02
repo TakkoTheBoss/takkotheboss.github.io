@@ -371,19 +371,19 @@ You can integrate C++ code into your code's functions as shown in the example be
 *Example*:
 
     # This is a sample function from the fs module.
-    file_Write:: {Filename,FileInput}: (
-    filename: Ri.fName
-    input: Ri.fInput
-    innerCPP: "
-        std::string input(reinterpret_cast<char const*>(input._data), input._size);
-        std::ofstream outputFile(reinterpret_cast<char const*>(filename._data), filename._size);
-        if (outputFile.is_open()) {
-            outputFile << input;
-            outputFile.close();
-            return 0;
-        } else {
-            return 1;  // Error opening the file
-        }
-    "
+    file_Write:: {fName:String,fInput:String}: (
+        filename: Ri.fName
+        input: Ri.fInput
+        innerCPP: "
+            std::string input(reinterpret_cast<char const*>(input._data), input._size);
+            std::ofstream outputFile(reinterpret_cast<char const*>(filename._data), filename._size);
+            if (outputFile.is_open()) {
+                outputFile << input;
+                outputFile.close();
+                return 0;
+            } else {
+                return 1;  // Error opening the file
+            }
+        "
     )
 

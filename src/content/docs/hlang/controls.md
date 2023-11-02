@@ -30,6 +30,8 @@ C style *range-based* for loops are used. The header of this loop consists of 3 
 
         i: i+1
 
+- Full Example.
+
         i: 0 | i<10 | i: i+1 @
         (
             print: "Hello there."
