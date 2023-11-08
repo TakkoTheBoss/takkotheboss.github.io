@@ -27,6 +27,7 @@ export const SIDEBAR_ITEMS = {
   ],
   "Core Library": [
     "/docs/modules/calc",
+    "/docs/modules/data",
     "/docs/modules/dt",
     "/docs/modules/fs",
     "/docs/modules/net",
