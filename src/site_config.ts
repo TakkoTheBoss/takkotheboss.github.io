@@ -17,8 +17,7 @@ export const SIDEBAR_ITEMS = {
   ],
   "How-To": [
     "/docs/howto/use",
-    "/docs/howto/import",
-    "/docs/howto/arg"
+    "/docs/howto/import"
     ],
   "Language": [
     "/docs/hlang/syntax",

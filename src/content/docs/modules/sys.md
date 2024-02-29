@@ -1,5 +1,5 @@
 ---
-title: Operating System
+title: System
 ---
 
 This module of the core library contains functions for some general system operations.
