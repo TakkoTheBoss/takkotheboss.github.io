@@ -33,6 +33,7 @@ export const SIDEBAR_ITEMS = {
     "/docs/modules/os",
     "/docs/modules/re",
     "/docs/modules/so",
+    "/docs/modules/sys"
   ],
   //"Tutorials": [
   //  "/docs/tutorials/build-x",
