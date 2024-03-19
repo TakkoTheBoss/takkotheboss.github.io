@@ -30,7 +30,7 @@ Added the following modules to Hachi's core library:
 - **sys** - System
 
 # Memory-Leak Check Build-Mode
-Implemented a way of compiling which checks for any memory leaks present in the hachi code using the `-mem` flag/switch.
+Implemented a way of compiling which checks for any memory leaks present in the hachi code using the `-buildml` flag/switch.
 
 Check out the [Hachi docs](https://takkotheboss.github.io/docs/howto/use/#-mem)
 
