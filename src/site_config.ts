@@ -17,7 +17,8 @@ export const SIDEBAR_ITEMS = {
   ],
   "How-To": [
     "/docs/howto/use",
-    "/docs/howto/import"
+    "/docs/howto/import",
+    "/docs/howto/arg"
     ],
   "Language": [
     "/docs/hlang/syntax",
@@ -27,11 +28,11 @@ export const SIDEBAR_ITEMS = {
   "Core Library": [
     "/docs/modules/calc",
     "/docs/modules/data",
-    "/docs/modules/dt",
-    "/docs/modules/fs",
+    //"/docs/modules/dt",
+    //"/docs/modules/fs",
     "/docs/modules/net",
-    "/docs/modules/os",
-    "/docs/modules/re",
+    //"/docs/modules/os",
+    //"/docs/modules/re",
     "/docs/modules/so",
     "/docs/modules/sys"
   ],
