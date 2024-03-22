@@ -2,7 +2,7 @@
 title: Use Hachi
 ---
 
-Make sure g++ and make are installed.
+Make sure `clang++` and `make` are installed.
 
     git clone https://gitlab.com/hachi-lang/hachi
     cd hachi
