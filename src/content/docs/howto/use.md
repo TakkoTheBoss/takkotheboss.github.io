@@ -2,14 +2,13 @@
 title: Use Hachi
 ---
 
-Make sure `clang++` and `make` are installed.
+Make sure clang++ and make are installed.
 
     git clone https://gitlab.com/hachi-lang/hachi
     cd hachi
     make
 
 That's it. It's suggested that your Hachi executable be placed in your PATH somewhere. Additionally, set HACHI_PATH to the `lib` directory. There are plans in the future to manage this more efficiently by way of running install scripts. When importing modules, Hachi will look in the HACHI_PATH first, and if the module doesn't exist there then imports become relative paths.
-
 
 ![Hachi Help](/hachi-help-screen.png "Hachi Help Screen" )
 
@@ -34,7 +33,7 @@ This builds the executable from a defined Hachi file.
 ## -buildml
 This builds the executable from a defined hachi file and checks for memory leaks.
 
-This is intended mainly to use on hachi code which makes use of the `outerCPP` and `innerCPP` commands since any raw C++ code you may use is outside the coverage of hachi's own memory safety mechanisms. Essentially C++ code used in either of the aforementioned commands is not included in hachi's auto-free mechanism as it's an unsafe advanced mechanism, and the `-buildml` flag allows the you to see where you may have introduced unsafe code that you may choose to correct.
+This is intended mainly to use on hachi code which makes use of the `outerCPP` and `innerCPP` commands since any raw C++ code you may choose to embed can introduce unsafe contexts which are outside the coverage of hachi's own memory safety mechanisms. Essentially C++ code used in either of the aforementioned commands is not included in hachi's auto-free mechanism as it's an unsafe advanced mechanism, and the `-buildml` flag allows the you to see where you may have introduced unsafe code that you may choose to correct.
 
 ### NOTE:
 Hachi's own `print` statements can be flagged under this mechanism if you're printing literals.  Best practice is just to print from a variable whenever you can.
@@ -52,6 +51,19 @@ Another memory safety item to disclose here is that hachi dynamically assigns me
 *Screenshot*:
 
 ![Hachi Memory Leak Test](/hachi_mem_leak.png "Hachi Debug" )
+
+# Cross-Compilation
+
+Hachi now supports cross-compilation between various architectures by specifying a target triple after the `-target` flag.
+
+*Syntax*:
+
+    hachi <filename>.8 -build <program-name> -target <target-triple>
+
+*Example*:
+
+    hachi sk.8 -build skate -target aarch64-unknown-linux-gnu
+
 
 # More Commands
 

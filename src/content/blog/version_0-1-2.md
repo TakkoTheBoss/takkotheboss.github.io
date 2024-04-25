@@ -70,3 +70,5 @@ Here we are passing an anonymous function as an input parameter to function **te
     testFunc: ({}->{Int}:(4-2))*6
 
 This would print **12**.
+
+- Mike
