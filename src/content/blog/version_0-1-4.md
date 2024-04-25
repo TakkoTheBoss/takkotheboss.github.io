@@ -13,7 +13,7 @@ Hachi shell provides an interactive environment to test tools and code in real-t
 
 Check out the [Hachi shell docs](https://takkotheboss.github.io/docs/howto/shell)
 
-# Enable Cross-Compilation of Hachi programs
+## Enable Cross-Compilation of Hachi programs
 Cross-compile for various architectures is now supported. You will need to install any external architecture-specific build dependencies on your own.
 
 Check our the [Hachi cross-compilation docs](https://takkotheboss.github.io/docs/howto/use#cross-compilation)
