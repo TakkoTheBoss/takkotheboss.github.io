@@ -386,7 +386,20 @@ Here we are passing a lambda function as an input parameter to function **testFu
 
 This would print **2**.
 
-*Anonymous Function Sample*
+#### Anonymous Functions
+
+Hachi supports Anonymous Functions. 
+
+*Examples*
+Here we are passing a lambda function as an input parameter to function **testFunc**.
+
+    testFunc:: {Int}: (
+        print: Ri
+    )
+
+    testFunc: ({}->{Int}:(4-2))
+    # This prints 2.
+
 Here we are passing an anonymous function as an input parameter to function **testFunc**.
 
     testFunc:: {Int}: (
@@ -394,11 +407,10 @@ Here we are passing an anonymous function as an input parameter to function **te
     )
 
     testFunc: ({}->{Int}:(4-2))*6
-
-This would print **12**.
+    # This prints 12.
 
 #### Misc
-Previously mentioned statements don't require any delimiters, indentation, etc. You may run an entire function, array, etc, on just one line.
+Previously mentioned statements don't require any delimiters, indentation, etc. You may run an entire function, array, etc, on just one line if you feel like it.
 
 One-liner function:
 
