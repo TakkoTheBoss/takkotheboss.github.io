@@ -55,6 +55,21 @@ Not quite a _primitive_ type, including anyways.
 This is a mistake
 ```
 
+# Generics
+Hachi supports generics by ways of the "AnyT" type.
+
+## **AnyT**
+
+```
+printThing:: {AnyT}:(
+    print: Ri
+)
+
+printThing: 69
+printThing: 69.420
+printThing: "Goodbye World!"
+```
+
 # Non-Primitive Syntax Design Philosophy
 Writing code in Hachi is simple, as many things are intuitive and _deductive_. 
 
@@ -397,3 +412,4 @@ One-liner function:
     oneLinerFunction:: {}->{String}: (pair: 1, 2 sum: pair.a + pair.b sum.String)
     # print the one-liner function.
     print: oneLinerFunction
+

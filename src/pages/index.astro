@@ -17,8 +17,7 @@ myString: "It's over 9000!!!!"
 mySubString: "9000"
 
 # The "myFunc" function signature takes in two type-defined String inputs,
-# where the output is AnyT, or "Anything", using type inference (I like to use for
-# Prototyping).
+# where the output is AnyT, the *generic* type in Hachi.
 
 myFunc:: {str:String,sub:String}->{AnyT}: (
     str: Ri.str
@@ -151,3 +150,4 @@ print: "It's that easy"
     </div>-->
 	</main>
 </Layout>
+
