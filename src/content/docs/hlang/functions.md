@@ -338,10 +338,10 @@ Involves the use or arguments in your code.
     )
 
 # Interoperability with C++
-Using the `innerCPP` and `outerCPP` Hachi functions allow you to make use of C++ code inside of your Hachi scripts. Essentially, you can do use this to do whatever you'd want to do i C++, or supplement your code with Hachi Bindings.
+Using the `innerCPP` and `outerCPP` Hachi functions allow you to make use of C++ code inside of your Hachi scripts. Essentially, you can do use this to do whatever you'd want to do in C++, or supplement your code with Hachi Bindings.
 
 ***WARNING:***
-Using raw C++ in your program can introduce unsafe contexts. USE WITH CAUTION! You can test for memory leaks with the `-buildml` flag. After compiling the object code, run it and it will output detected potential memory leaks.
+Hachi is built with memory safety in mind (auto-free). However using raw C++ in your program can introduce unsafe contexts. USE WITH CAUTION! You can test for memory leaks with the `-buildml` flag. After compiling the object code, run it and it will output detected potential memory leaks.
 
 ## innerCPP
 C++ code defined in `innerCPP` will be inside of the main function of the transpiled code.

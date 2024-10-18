@@ -29,6 +29,7 @@ export const SIDEBAR_ITEMS = {
     "/docs/modules/calc",
     "/docs/modules/data",
     //"/docs/modules/dt",
+    "/docs/modules/fmt",
     //"/docs/modules/fs",
     "/docs/modules/net",
     //"/docs/modules/os",

@@ -147,7 +147,7 @@ Double Colon.
     )
 
 ##### Define as Variable
-Single Colon.
+Single Colon. (It's up to you as to why you'd want to do this)
 
     <function-name> : <input-parameters> -> <return-values> : (
         <function-body>
@@ -202,7 +202,7 @@ Input parameters can be either a type declaration, an named input element with a
 
 Access right-side input parameters with `Ri` (Right-Input), and `Li` (Right-Input) with left-side input parameters. If there are both left side and right-side input, they're separated with a `.` period character.
 
-When using multiple input parameters, you can delimit the parameters with either a comma, a space, or a semi-colon.
+When using multiple input parameters, you can delimit the parameters with either a comma, a space, or a semi-colon. (anything in curl-brackets don't require a hard delimiter)
 
     # Spaces as delimiters.
     function1:: {str1:String str2:String int1:Int}:(
@@ -335,83 +335,4 @@ This takes 2 integer as input parameters, one from the left side of the function
     function :: {Int}.{Int} -> {Int}:
     (
         Li+Ri
-    )
-    2.function: 3
 
-
-#### Function Overloading
-
-Hachi supports Function Overloading, where your program can have multiple functions of the same name but different function signatures. The sample below shows how you may create 3 functions of the same name.
-
-    myFunc:: {str:String}->{String}:(
-        str: Ri.str
-        str
-    )
-
-    myFunc:: {str1:String,str2:String}->{String}:(
-        str1: Ri.str1
-        str2: Ri.str2
-        cc: str1 + " " + str2
-        cc
-    )
-
-    myFunc:: {str1:String,str2:String,age:Int}->{String}:(
-        str1: Ri.str1
-        str2: Ri.str2
-        age: Ri.age
-        cc: str1 + " is a " + str2 + " who is  " + age.String + " years old!"
-        cc
-    )
-
-    test1: myFunc: "Hachiko"
-    test2: myFunc: "Hachiko", "doggo"
-    test3: myFunc: "Hachiko", "doggo", 8
-
-    print: test1
-    print: test2
-    print: test3
-
-#### Lambda Functions
-
-Hachi supports Lambda & Anonymous Functions. 
-
-*Lambda Function Sample*
-Here we are passing a lambda function as an input parameter to function **testFunc**.
-
-    testFunc:: {Int}: (
-        print: Ri
-    )
-
-    testFunc: ({}->{Int}:(4-2))
-
-This would print **2**.
-
-#### Anonymous Functions
-
-Hachi supports Anonymous Functions. 
-
-*Examples*
-Here we are passing a lambda function as an input parameter to function **testFunc**.
-
-    testFunc:: {Int}: (
-        print: Ri
-    )
-
-    testFunc: ({}->{Int}:(4-2))
-    # This prints 2.
-
-Here we are passing an anonymous function as an input parameter to function **testFunc**.
-
-    testFunc:: {Int}: (
-        print: Ri
-    )
-
-    testFunc: ({}->{Int}:(4-2))*6
-    # This prints 12.
-
-#### Misc
-Previously mentioned statements don't require any delimiters, indentation, etc. You may run an entire function, array, etc, on just one line if you feel like it.
-
-One-liner function:
-
-    singleLineFunction:: {} (print: "Hello" print: "there!")
