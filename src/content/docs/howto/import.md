@@ -11,6 +11,7 @@ To import a Hachi module into your code, use `>@` followed by the relative path 
     >@ "so/so"
 
 # Multiple Imports
+Use commas and newlines.
 
 *Syntax*:
 
@@ -21,6 +22,6 @@ And what's happening here is that Hachi is looking in the **HACHI_PATH** (please
 
     >@ "mod/my-mod"
 
-If you do not set your **HACHI_PATH**, then all module import paths become relative. So it's your choice whether or not to set this.
+If you do not set your **HACHI_PATH**, then all module import paths become relative.
 
 At this time there are import collisions which occur if you have duplicate function names being or the same function from another module being used across your modules. So, if your *my-mod.8* has the *so/so* imported in it, where the function *strContains* is used, you will run into issues trying to use the *strContains* functions if you also have the *so/so* module also loaded into your main Hachi file. This is ultimately a C++ namespace issue which will be handled as soon as it's feasible to fix. Although a current workaround is to use *strContains* (or any other already imported function) as normal without importing it into your main Hachi file, as it already exists in your *my-mod* module. 

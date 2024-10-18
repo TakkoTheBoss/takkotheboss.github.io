@@ -38,4 +38,3 @@ Exits the Hachi shell.
     .exit
     .x # short syntax
 
-Example

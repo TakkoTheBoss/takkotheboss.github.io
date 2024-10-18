@@ -335,4 +335,65 @@ This takes 2 integer as input parameters, one from the left side of the function
     function :: {Int}.{Int} -> {Int}:
     (
         Li+Ri
+    )
+    2.function: 3
 
+
+#### Function Overloading
+
+Hachi supports Function Overloading, where your program can have multiple functions of the same name but different function signatures. The sample below shows how you may create 3 functions of the same name.
+
+    myFunc:: {str:String}->{String}:(
+        str: Ri.str
+        str
+    )
+
+    myFunc:: {str1:String,str2:String}->{String}:(
+        str1: Ri.str1
+        str2: Ri.str2
+        cc: str1 + " " + str2
+        cc
+    )
+
+    myFunc:: {str1:String,str2:String,age:Int}->{String}:(
+        str1: Ri.str1
+        str2: Ri.str2
+        age: Ri.age
+        cc: str1 + " is a " + str2 + " who is  " + age.String + " years old!"
+        cc
+    )
+
+    test1: myFunc: "Hachiko"
+    test2: myFunc: "Hachiko", "doggo"
+    test3: myFunc: "Hachiko", "doggo", 8
+
+    print: test1
+    print: test2
+    print: test3
+
+#### Anonymous Functions
+
+Hachi supports Anonymous Functions for your "on-the-fly" needs. 
+
+*Example*
+
+Here we are passing an anonymous function as an input parameter to function **testFunc**.
+
+    # Create Function to print given integer.
+    testFunc:: {Int}: (
+        print: Ri
+    )
+
+    # Call Function and pass anonymous input.
+    testFunc: ({}->{Int}:(4-2))*6
+    # This prints 12.
+
+#### Misc
+Previously mentioned statements don't require any delimiters, indentation, etc. You may run an entire function, array, etc, on just one line if you feel like it.
+
+One-liner function:
+
+    # One-liner function which takes no input, declares "pair" as a tuple of two integers, declares "sum" as the sum of the tuple integers, and returns a string-converted "sum".
+    oneLinerFunction:: {}->{String}: (pair: 1, 2 sum: pair.a + pair.b sum.String)
+    # print the one-liner function.
+    print: oneLinerFunction

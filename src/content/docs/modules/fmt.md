@@ -21,4 +21,3 @@ shout (shell+out) is a C binding for `cout`, which is a safer alternative for pr
     # Shout a string variable.
     stringVariable: "Goodbye World!"
     shout: stringVariable
-

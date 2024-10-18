@@ -124,4 +124,3 @@ This is a one-liner Hachi command compiles and executes the program. When used w
 
 ![Hachi Go Args](/hachi-go-args.png "Hachi Go with Args" )
 
-
