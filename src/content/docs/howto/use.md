@@ -106,6 +106,17 @@ Compile Flags. Allows you to specify C++ compiler flags in your build.
 
     hachi coolProgram.8 -cf "-std=c++17 -ldl" -build coolProgram
 
+## -cc
+Compile C/C++ files as build tool. Allows you to specify C/C++ files and compiler flags in your build.
+
+*Syntax*:
+
+    hachi <filename>.cpp -cc "<compiler-flags> <program-name"
+
+*Example*:
+
+    hachi yoloSwag.cpp -cc "-std=c++17 -ldl -o yoloSwag"
+
 # Run
 Hachi files can be ran instead of compiled, similar to how Go's `go run` command works. In short, it compiles the Hachi file and executes it.
 
@@ -123,4 +134,5 @@ This is a one-liner Hachi command compiles and executes the program. When used w
 *Screenshot*:
 
 ![Hachi Go Args](/hachi-go-args.png "Hachi Go with Args" )
+
 

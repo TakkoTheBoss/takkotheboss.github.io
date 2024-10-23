@@ -19,7 +19,10 @@ export const SIDEBAR_ITEMS = {
     "/docs/howto/use",
     "/docs/howto/import",
     "/docs/howto/shell",
-    ],
+  ],
+  "Tutorials": [
+    "/docs/tutorials/basics",
+  ],
   "Language": [
     "/docs/hlang/syntax",
     "/docs/hlang/controls",
@@ -37,9 +40,6 @@ export const SIDEBAR_ITEMS = {
     "/docs/modules/so",
     "/docs/modules/sys"
   ],
-  //"Tutorials": [
-  //  "/docs/tutorials/build-x",
-  //],
   //"Guides": [
   //  "/docs/guides/migrate-from-z",
   //]
