@@ -23,9 +23,9 @@ cd hachi
 make
 ```
 
-Be sure to set the `HACHI-LIB` environment variable to the `lib` directory. This is where Hachi will look for modules.
+Be sure to set the `HACHI_LIB` environment variable to the `lib` directory. This is where Hachi will look for modules.
 
-*Note: You can place the lib directory anywhere you'd like. Just be sure to set your `HACHI-LIB` environment variable after you move it, or update the previously set path.*
+*Note: You can place the lib directory anywhere you'd like. Just be sure to set your `HACHI_LIB` environment variable after you move it, or update the previously set path.*
 
 Run the `hachi -init` command to initialize a folder with a main.hachi file and an hMods folder to hold any custom mods you may make.
 
