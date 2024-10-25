@@ -19,22 +19,27 @@ Clears the screen.
 
 *Syntax*:
 
-    .clear
-    .clr # short syntax
+```shell
+.clear
+.clr # short syntax
+```
 
 ### .read
 Prints output of all your prior Hachi shell inputs.
 
 *Syntax*:
 
-    .read
-    .r # short syntax
+```shell
+.read
+.r # short syntax
+```
 
 ### .exit
 Exits the Hachi shell.
 
 *Syntax*:
 
-    .exit
-    .x # short syntax
-
+```shell
+.exit
+.x # short syntax
+```

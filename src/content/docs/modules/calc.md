@@ -15,4 +15,6 @@ Takes 2 integer input parameters and returns the entire range of numbers in an i
 
 *Syntax*:
 
-    brange: 1, 100
+```php
+brange: 1, 100
+```

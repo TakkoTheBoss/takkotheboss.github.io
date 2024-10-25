@@ -10,8 +10,12 @@ Returns a binary output for if a given substring exists in a string.
 
 *Syntax*:
 
-    strContains: <string-to-search>, <substring-to-search-for>
+```php
+strContains: <string-to-search>, <substring-to-search-for>
+```
 
 *Example*:
 
-    strContains: "It's Over 9000!!!", "Over"
+```php
+strContains: "It's Over 9000!!!", "Over"
+```

@@ -11,41 +11,29 @@ make
 # Check version
 hachi -v`
 
-const CODE = `>@ "so/so" # Import the String Operations module.
+const CODE = `>@ "so/so"
 
 myString: "It's over 9000!!!!"
 mySubString: "9000"
-
-# The "myFunc" function signature takes in two type-defined String inputs,
-# where the output is AnyT, the *generic* type in Hachi.
 
 myFunc:: {str:String,sub:String}->{AnyT}: (
     str: Ri.str
     substr: Ri.sub
     returnVar: ""
-
-    # "status" is a variable. "strContains" is a function. And to the right 
-    # are the function's input parameters.
-
     status: strContains: str, substr
-    status = 1 ? # Ternary operator for conditionals
+    status = 1 ?
     (
         returnVar: "Success!!"
-    )
-    | status = 0 ? # Pipe used for "ElseIf" with a new condition,
-    (
+    )| status = 0 ? (
         returnVar: "Failed."
-    )
-    | # Pipe used for or "Else" if there is no other condition
-    (
-        print: "Something went wrong bro"
+    )|(
+        shout: "Something went wrong bro"
     )
     returnVar
 )
 
 funky: myFunc: myString, mySubString
-print: funky
-print: "It's that easy"
+shout: funky
 `
 ---
 
@@ -71,9 +59,9 @@ print: "It's that easy"
         <div class="md:flex md:justify-center space-y-8 md:space-y-0 md:gap-x-8 dark:text-white">
           <div>
             <div class="bg-zinc-100 dark:bg-zinc-900 p-8 rounded-2xl shadow-xl">
-              <h2 class="text-2xl font-bold">Fast Compilation</h2>
+              <h2 class="text-2xl font-bold">C++ Interop</h2>
               <p class="text-gray-600 dark:text-gray-400 my-4">
-                Dependency management, module discovery, and dead code elimination contribute to Hachi's quick compilation.
+                Seamless integration with C++ code allow devs to easily drop in C++ code to leverage existing libraries and functions without extra setup, all while providing a versatile build system.
               </p>
               <!--<a href="/docs/get-started/introduction" class="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-2 px-4 rounded">
                 LEARN
@@ -150,4 +138,3 @@ print: "It's that easy"
     </div>-->
 	</main>
 </Layout>
-

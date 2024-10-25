@@ -8,19 +8,25 @@ To import a Hachi module into your code, use `>@` followed by the relative path 
 
 *Syntax*:
 
-    >@ "so/so"
+```php
+>@ "so/so"
+```
 
 # Multiple Imports
 Use commas and newlines.
 
 *Syntax*:
 
-    >@ "so/so",
-    >@ "fs/fs
+```php
+>@ "so/so",
+>@ "fs/fs
+```
 
 And what's happening here is that Hachi is looking in the **HACHI_PATH** (please set accordingly) first to see if the String Operations and the Filesystem modules are present, and if not then the path to your module becomes relative to the directory you're working in. So if you're in your top level directory of your project and you have a *mod* folder which contains a Hachi module called *my-mod.8*, then your import statement becomes the following:
 
-    >@ "mod/my-mod"
+```php
+>@ "mod/my-mod"
+```
 
 If you do not set your **HACHI_PATH**, then all module import paths become relative.
 

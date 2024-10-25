@@ -10,20 +10,26 @@ Captures command line argument input to be used in you hachi code.
 
 *Import-with*:
 
-    >@ "sys/arg"
+```php
+>@ "sys/arg"
+```
 
 *Syntax*:
 
-    >@ "sys/arg"
+```php
+>@ "sys/arg"
 
-    print: argv.get: 0
+print: argv.get: 0
+```
 
 *Example*:
 
-    # Example using the `go` flag. 
-    hachi <your-file>.8 -go yolo_so-lit
+```php
+# Example using the `go` flag. 
+hachi <your-file>.8 -go yolo_so-lit
 
-    # Example post compilation.
-    hachi <your-file>.8 -build <your-program>
-    # Run your compiled program
-    <your-program> yolo_so-lit
+# Example post compilation.
+hachi <your-file>.8 -build <your-program>
+# Run your compiled program
+<your-program> yolo_so-lit
+```

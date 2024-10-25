@@ -26,4 +26,3 @@ The idea of Hachi ultimately culminated from a desire to have wield seamless and
 Also, Hachiko, the doggo who's this project's namesake, has his 9th birthday on October 31st, so early-Happy Birthday to Hachiko and Hachi!!
 
 -Mike
-
