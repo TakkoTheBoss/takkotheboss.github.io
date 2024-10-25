@@ -33,14 +33,14 @@ export async function get({ url, params, props }: APIContext) {
       body: 'Not Found'
     }
   }
-
+  const defaultDescription = 'No description available'; // Default description value
   const out = html`<div tw="flex flex-col w-full h-full bg-white">
     <span tw="absolute top-0 left-0 p-2 w-full h-full rounded-2xl">
       <span tw="w-full h-full rounded-2xl bg-white"></span>
     </span>
     <span tw="absolute top-12 left-24 w-[56rem] text-[5rem] flex flex-col">
       <h1>${post?.data.title}</h1>
-      <p tw="text-[1.8rem] w-[56rem] bottom-32">${(post?.data as any).description ?? ''}</p>
+      <p tw="text-[1.8rem] w-[56rem] bottom-32">${(post?.data as any).description ?? 'None'}</p>
     </span>
     <p tw="absolute bottom-12 left-24 text-[1.5rem] text-zinc-600">${(post?.data as any).published?.toDateString() ?? ''}</p>
   </div>`
