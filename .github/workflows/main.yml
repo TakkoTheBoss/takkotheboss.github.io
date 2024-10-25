@@ -14,19 +14,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16 # Specify the Node.js version you want to use
+          node-version: 16
 
       - name: Install dependencies
-        run: |
-          yarn install
-          # Optionally clear cache if needed
-          # yarn cache clean
+        run: yarn install
 
       - name: Build the site
         run: yarn run astro build
@@ -36,12 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
