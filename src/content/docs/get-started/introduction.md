@@ -27,32 +27,33 @@ Hachi has been successfully tested on Linux.
 ## Features
 These are current features present in this implementation:
 
-### Standard
-* Your basic data types `Bool`, `Int`, `Dub`, `String`
-* All the operators you'd expect (`+`, `-`, `&&`, `=>`, etc)
-* Both single and multi-line comments
-* Flow control (conditional, loops)
-* Constants
-* Data structs
-* Tuples
-* Int arrays
-* String arrays
-* Functions
-* Strings and various String operations
-* User input
-* Running system commands
-* AnyT type (equivalent to templates or generics in other languages)
-* Pass-by-reference
-* Various programming patterns
-* Operator overloading
-* File importing
-* Lambda functions
-* Anonymous functions
+### Standard Features
+- Your basic data types `Bool`, `Int`, `Dub`, `String`
+- All the operators you'd expect (`+`, `-`, `*`, `/`, `%`, `&&`, `>`, `<`, `=>`, etc)
+- Both single and multi-line comments
+- Flow control (conditional, loops)
+- Constants
+- Data structs
+- Tuples
+- Int arrays
+- String arrays
+- Hash Maps
+- Functions
+- Strings and various String operations
+- User input
+- Running system commands
+- AnyT type (equivalent to templates or generics in other languages)
+- Pass-by-reference
+- Flexible programming patterns
+- Operator overloading
+- File importing
+- Anonymous functions
 
-### Hachi Features
+### Unique Hachi Features
 - Run C++ code inside of Hachi files.
+- Auto-Free memory management.
 - Creating Variables is implicit, set it and forget it.
-- Variables have type inference.
+- Type inference, so no need to specify the type.
 - To call a function which doesn't take any arguments is identical to accessing a variable.
     - Calling function `function`
     - Accessing var `var1`
@@ -66,15 +67,14 @@ These are current features present in this implementation:
         - `function1: param1,param2,param3`
     - Creating tuple var:
         - `tupleVar: item1,item2,item3`
-- Ignores most white space in code. You can run almost the entire file on one line, if that's your thing I guess (I'm not judging, you do you homie!!)
 - No need to separate with semicolon.
-- No double-equals `==`, using `=` for comparison.
-- Hachi uses colon (`:`) for assignment.
+- No double-equals `==`, uses `=` for comparison.
+- Colon (`:`) used for assignment.
 - Tuples, structs and class objects are all handled similarly in the code.
 - A function can be sent arguments from the either the left or right side, ***OR*** on both sides.
     - Left and right-side inputs:
         - (`inputLeft.function: inputRight`)
-- Control is done via symbols & operators instead of keywords.
+- Control flow is performed via operators instead of keywords.
     - Examples:
         - `@` for **loop**
         - `?` for **if**

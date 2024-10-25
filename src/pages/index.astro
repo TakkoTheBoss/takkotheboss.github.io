@@ -11,11 +11,133 @@ make
 # Check version
 hachi -v`
 
-const CODE = `>@ "so/so" # Import the String Operations module.
+const CODE = `>@ "so/so"
 
 myString: "It's over 9000!!!!"
 mySubString: "9000"
 
+myFunc:: {str:String,sub:String}->{AnyT}: (
+    str: Ri.str
+    substr: Ri.sub
+    returnVar: ""
+    status: strContains: str, substr
+    status = 1 ?
+    (
+        returnVar: "Success!!"
+    )| status = 0 ? (
+        returnVar: "Failed."
+    )|(
+        shout: "Something went wrong bro"
+    )
+    returnVar
+)
+
+funky: myFunc: myString, mySubString
+shout: funky
+`
+---
+
+<Layout title="Hachi">
+	<main>
+    <div class="max-w-6xl mx-auto dark:text-white md:py-32 md:flex">
+      <div class="p-8 md:w-1/2">
+        <h1 class="text-6xl font-bold my-4">Hachi</h1>
+        <p class="text-2xl my-8">
+          A general purpose, compiled programming language thats <b class="text-green-600 dark:text-violet-600">simple</b> and <b class="text-green-600 dark:text-violet-600">easy</b> to use for building <b class="text-green-600 dark:text-violet-600">performant</b> server-side applications and tools.
+        </p>
+        <a href="/docs/get-started/introduction" class="inline-block bg-indigo-700 hover:bg-indigo-800 text-white text-lg font-bold py-2 px-4 rounded">
+          GET STARTED
+        </a>
+      </div>
+      <div class="w-full p-8 md:w-1/2 [&_pre]:p-4 [&_pre]:rounded-2xl [&_pre]:shadow-xl [&_pre]:border-2 [&_pre]:border-indigo-600">
+        <Code code={CODE} lang="php"/>
+      </div>
+    </div>
+    <div class="bg-green-700 dark:bg-zinc-800">
+      <div class="max-w-6xl mx-auto md:py-16 p-8 text-center">
+        <h1 class="text-white text-6xl font-bold mb-16">Sick Features</h1>
+        <div class="md:flex md:justify-center space-y-8 md:space-y-0 md:gap-x-8 dark:text-white">
+          <div>
+            <div class="bg-zinc-100 dark:bg-zinc-900 p-8 rounded-2xl shadow-xl">
+              <h2 class="text-2xl font-bold">C++ Interop</h2>
+              <p class="text-gray-600 dark:text-gray-400 my-4">
+                Seamless integration with C++ code allow devs to easily drop in C++ code to leverage existing libraries and functions without extra setup, all while providing a versatile build system.
+              </p>
+              <!--<a href="/docs/get-started/introduction" class="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-2 px-4 rounded">
+                LEARN
+              </a>-->
+            </div>
+          </div>
+          <div>
+            <div class="bg-zinc-100 dark:bg-zinc-900 p-8 rounded-2xl shadow-xl">
+              <h2 class="text-2xl font-bold">Memory Safe</h2>
+              <p class="text-gray-600 dark:text-gray-400 my-4">
+                Hachi employs it's own auto-free memory management mechanism to ensure your code doesn't introduce memory vulnerabilities by deallocating items when no longer in scope.
+              </p>
+              <!--<a href="/docs/guides/migrate-from-z" class="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-2 px-4 rounded">
+                MIGRATE
+              </a>-->
+            </div>
+          </div>
+          <div>
+            <div class="bg-zinc-100 dark:bg-zinc-900 p-8 rounded-2xl shadow-xl">
+              <h2 class="text-2xl font-bold">Highly Flexible</h2>
+              <p class="text-gray-600 dark:text-gray-400 my-4">
+                Indentation and (most) spacing is ignored, allowing developers to decide which coding styles and conventions to use for various patterns.
+              </p>
+              <!--<a href="/docs/get-started/installation" class="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-2 px-4 rounded">
+                INSTALL
+              </a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto dark:text-white md:py-32 md:flex">
+      <div class="p-8 md:w-1/2">
+        <h1 class="text-6xl font-bold my-4">Easy Install</h1>
+        <p class="text-2xl my-8">
+          Get going writing your first <b class="text-green-600 dark:text-violet-600">Hachi</b> program in record time!
+        </p>
+        <!--<a href="/docs/get-started/introduction" class="inline-block bg-indigo-700 hover:bg-indigo-800 text-white text-lg font-bold py-2 px-4 rounded">
+          GET STARTED
+        </a>-->
+      </div>
+      <div class="w-full p-8 md:w-1/2 [&_pre]:p-4 [&_pre]:rounded-2xl [&_pre]:shadow-xl [&_pre]:border-2 [&_pre]:border-indigo-600">
+        <Code code={INSTALL} lang="nim"/>
+      </div>
+    </div>
+    <!--<div class="max-w-6xl mx-auto dark:text-white md:py-32 md:flex md:flex-wrap">
+      <div class="p-8 md:w-1/2">
+        <h2 class="text-4xl font-bold my-4">Point 1</h2>
+        <p class="text-lg my-8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate maxime corporis expedita consequuntur ipsa, eaque a suscipit, voluptatem voluptas excepturi aperiam magnam, eos quo est ipsam amet illo laboriosam consequatur.
+        </p>
+      </div>
+      <div class="p-8 md:w-1/2">
+        <h2 class="text-4xl font-bold my-4">Point 2</h2>
+        <p class="text-lg my-8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate maxime corporis expedita consequuntur ipsa, eaque a suscipit, voluptatem voluptas excepturi aperiam magnam, eos quo est ipsam amet illo laboriosam consequatur.
+        </p>
+      </div>
+      <div class="p-8 md:w-1/2">
+        <h2 class="text-4xl font-bold my-4">Point 3</h2>
+        <p class="text-lg my-8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate maxime corporis expedita consequuntur ipsa, eaque a suscipit, voluptatem voluptas excepturi aperiam magnam, eos quo est ipsam amet illo laboriosam consequatur.
+        </p>
+      </div>
+      <div class="p-8 md:w-1/2">
+        <h2 class="text-4xl font-bold my-4">Point 4</h2>
+        <p class="text-lg my-8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate maxime corporis expedita consequuntur ipsa, eaque a suscipit, voluptatem voluptas excepturi aperiam magnam, eos quo est ipsam amet illo laboriosam consequatur.
+        </p>
+      </div>
+      <a href="/docs/get-started/introduction" class="w-fit px-8 my-4 text-center mx-auto block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-2 rounded">
+        GET STARTED
+      </a>
+    </div>-->
+	</main>
+</Layout>
 # The "myFunc" function signature takes in two type-defined String inputs,
 # where the output is AnyT, the *generic* type in Hachi.
 
