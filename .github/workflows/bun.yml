@@ -41,10 +41,10 @@ jobs:
           echo "Current PATH: $PATH" # For debugging purposes
           bun install
 
-      - name: Run in Dev Mode
+      - name: Run in Build Mode
         run: |
           echo "Starting Bun in development mode..."
-          bun run dev # Ensure this matches your actual dev script
+          bun run build # Ensure this matches your actual dev script
 
   deploy:
     needs: build
