@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { SITE_URL } from './src/site_config';
+import fs from 'fs'; // Import fs for file operations
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +11,12 @@ export default defineConfig({
   integrations: [tailwind(), sitemap()],
   vite: {
     plugins: [rawFonts(['.ttf'])],
-    optimizeDeps: { exclude: ['@resvg/resvg-js'] }
+    optimizeDeps: { exclude: ['@resvg/resvg-js'] },
+    build: {
+      rollupOptions: {
+        external: ['shiki/themes/hc_light.json'], // Added rollupOptions here
+      },
+    },
   },
 });
 
