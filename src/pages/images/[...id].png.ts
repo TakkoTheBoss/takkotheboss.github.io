@@ -40,7 +40,7 @@ export async function get({ url, params, props }: APIContext) {
     </span>
     <span tw="absolute top-12 left-24 w-[56rem] text-[5rem] flex flex-col">
       <h1>${post?.data.title}</h1>
-      <p tw="text-[1.8rem] w-[56rem] bottom-32">${(post?.data as any).description ?? defaultDescription}</p>
+      <!--<p tw="text-[1.8rem] w-[56rem] bottom-32">${(post?.data as any).description ?? defaultDescription}</p>-->
     </span>
     <p tw="absolute bottom-12 left-24 text-[1.5rem] text-zinc-600">${(post?.data as any).published?.toDateString() ?? ''}</p>
   </div>`
