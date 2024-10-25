@@ -23,7 +23,8 @@ jobs:
           echo 'Bun installed successfully.'
 
       - name: Add Bun to PATH
-        run: echo 'PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
+        run: |
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
       - name: Verify Bun installation
         run: |
