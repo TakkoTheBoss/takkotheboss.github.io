@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "Current PATH: $PATH" # For debugging purposes
           bun install
-          bun run build # Adjust this to match your actual build script
+          bun run dev # Adjust this to match your actual build script
 
   deploy:
     needs: build
