@@ -1,5 +1,5 @@
 ---
-title: Version 0.2.1 Release - Happy Birthday Hachi 🐺🎂🥳🎉!
+title: Version 0.2.1 Release - Happy Birthday Hachi!
 description: Hachi version 0.2.1 updates.
 published: 2024-10-23
 ---
