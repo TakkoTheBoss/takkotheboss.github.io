@@ -21,7 +21,10 @@ jobs:
         run: |
           curl -fsSL https://bun.sh/install | bash
           echo 'export PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
-          source $GITHUB_ENV # Ensure the path is available in the current step
+          # You can source .bashrc here, but since we are modifying $GITHUB_ENV, it will work in subsequent steps
+          
+      - name: Add Bun to PATH
+        run: echo 'PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
 
       - name: Verify Bun installation
         run: bun --version # This step checks if Bun is installed correctly
