@@ -21,6 +21,11 @@ jobs:
         run: |
           curl -fsSL https://bun.sh/install | bash
           echo 'Bun installed successfully.'
+          
+      - name: Update Browserslist Database
+        run: |
+          echo "Updating Browserslist database..."
+          npx update-browserslist-db@latest
 
       - name: Add Bun to PATH
         run: |
