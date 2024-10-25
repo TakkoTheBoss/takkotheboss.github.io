@@ -20,6 +20,7 @@ export default defineConfig({
   },
 });
 
+// Function to handle raw font imports
 function rawFonts(ext) {
   return {
     name: 'vite-plugin-raw-fonts',
@@ -28,20 +29,9 @@ function rawFonts(ext) {
         const buffer = fs.readFileSync(id);
         return {
           code: `export default ${JSON.stringify(buffer)}`,
-          map: null
+          map: null,
         };
       }
-    }
-  };
-}
-    transform(_, id) {
-      if (ext.some(e => id.endsWith(e))) {
-        const buffer = fs.readFileSync(id);
-        return {
-          code: `export default ${JSON.stringify(buffer)}`,
-          map: null
-        };
-      }
-    }
+    },
   };
 }
