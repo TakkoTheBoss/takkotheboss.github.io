@@ -36,15 +36,10 @@ jobs:
           echo "Current PATH: $PATH" # For debugging purposes
           bun install
 
-      - name: Build the project
+      - name: Run in Dev Mode
         run: |
-          bun run build # Ensure this matches your actual build script
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-output
-          path: /opt/* # Adjust to your actual output directory
+          echo "Starting Bun in development mode..."
+          bun run dev # Ensure this matches your actual dev script
 
   deploy:
     needs: build
@@ -53,13 +48,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: build-output
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        with:
-          folder: path/to/your/build/directory # Ensure this matches the directory where the artifacts were downloaded
