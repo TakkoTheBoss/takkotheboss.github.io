@@ -146,6 +146,21 @@ hachi <filename>.cpp -cc "<compiler-flags> <program-name"
 hachi yoloSwag.cpp -cc "-std=c++17 -ldl -o yoloSwag"
 ```
 
+## -c
+Inline code execution support for Hachi code, similar to python's -c command. You can run one-liner code straight from the `hachi` command.
+
+*Syntax*:
+
+```shell
+hachi -c <code>
+```
+
+*Example*:
+
+```shell
+hachi -c ">@ \"fmt/fmt\" shout: \"Hachi is awesome!\""
+```
+
 # Run
 Hachi files can be ran instead of compiled, similar to how Go's `go run` command works. In short, it compiles the Hachi file and executes it.
 
