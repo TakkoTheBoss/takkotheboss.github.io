@@ -10,7 +10,7 @@ cd hachi
 make
 ```
 
-That's it. It's suggested that your Hachi executable be placed in your PATH somewhere. Additionally, set HACHI_PATH to the `lib` directory. There are plans in the future to manage this more efficiently by way of running install scripts. When importing modules, Hachi will look in the HACHI_PATH first, and if the module doesn't exist there then imports become relative paths.
+That's it. It's suggested that your Hachi executable be placed in your PATH somewhere. Additionally, set HACHI_LIB to the `lib` directory. There are plans in the future to manage this more efficiently by way of running install scripts. When importing modules, Hachi will look in the HACHI_LIB first, and if the module doesn't exist there then imports become relative paths.
 
 ![Hachi Help](/hachi-help-screen.png "Hachi Help Screen" )
 
