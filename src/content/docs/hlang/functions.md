@@ -162,6 +162,8 @@ Hachi has Integer and String Arrays.
 ## Integer Array
 A data structure used as a collection of integer values.
 
+### Initiate
+
 *Syntax*:
 
 ```php
@@ -205,6 +207,34 @@ myArray: IntArray.set: 6, 9
 ## String Array
 A data structure used as a collection of string values.
 
+### Initiate
+
+*Syntax*:
+
+```php
+StringArray: <size>
+```
+
+*Example*:
+
+```php
+StringArray: 420
+```
+
+### Set
+
+*Syntax*:
+
+```php
+StringArray.set: <index>, <string>
+```
+
+*Example*:
+
+```php
+StringArray.set: 69, "Four-Twenty"
+```
+
 ### Get
 
 *Syntax*:
@@ -218,20 +248,6 @@ A data structure used as a collection of string values.
 ```php
 myArray: StringArray.get: 5
 ```    
-
-### Set
-
-*Syntax*:
-
-```php
-<variable>: StringArray.set: <index>, <string>
-```
-
-*Example*:
-
-```php
-myArray: StringArray.set: 6, "Nine"
-```
 
 # Literals
 
