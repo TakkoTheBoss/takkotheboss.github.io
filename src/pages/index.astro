@@ -6,13 +6,13 @@ const INSTALL = `# Clone the repository
 git clone https://gitlab.com/hachi-lang/hachi
 # Navigate to the directory
 cd hachi
-# Install dependencies
+# Install Hachi executable
 make
 # Check version
 hachi -v`
 
-const CODE = `>@ "so/so",
->@ "fmt/fmt"
+const CODE = `>@ "so",
+>@ "fmt"
 
 myString: "It's over 9000!!!!"
 mySubString: "9000"
@@ -73,7 +73,7 @@ shout: funky
             <div class="bg-zinc-100 dark:bg-zinc-900 p-8 rounded-2xl shadow-xl">
               <h2 class="text-2xl font-bold">Memory Safe</h2>
               <p class="text-gray-600 dark:text-gray-400 my-4">
-                Hachi employs it's own auto-free memory management mechanism to ensure your code doesn't introduce memory vulnerabilities by deallocating items when no longer in scope.
+                Hachi employs it's own auto-release memory management mechanism to ensure your code doesn't introduce memory vulnerabilities by deallocating items when no longer in scope.
               </p>
               <!--<a href="/docs/guides/migrate-from-z" class="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-2 px-4 rounded">
                 MIGRATE

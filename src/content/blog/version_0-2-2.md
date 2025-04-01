@@ -1,7 +1,7 @@
 ---
 title: Version 0.2.2 Release - Import Resolution & Redundancy Fixes
 description: Hachi version 0.2.2 updates.
-published: 2025-03-23
+published: 2025-03-24
 ---
 
 This release fixes two issues with Hachi's import capability.
