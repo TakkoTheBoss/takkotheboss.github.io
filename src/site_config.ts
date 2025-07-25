@@ -22,6 +22,8 @@ export const SIDEBAR_ITEMS = {
   ],
   "Tutorials": [
     "/docs/tutorials/basics",
+    "/docs/tutorials/imports",
+    "/docs/tutorials/inlinecpp"
   ],
   "Language": [
     "/docs/hlang/syntax",

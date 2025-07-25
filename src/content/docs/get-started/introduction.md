@@ -2,7 +2,7 @@
 title: Introduction to Hachi
 ---
 
-![Hachi Logo](/Hachi_Logo-Medium.png "Hachi Logo" )
+![Hachi Logo](/hachi_mascot.png "Hachiko!")
 
 # The Hachi Programming Language
 **_Move Fast and Make Things_**

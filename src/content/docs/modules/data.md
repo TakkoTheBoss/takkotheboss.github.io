@@ -49,10 +49,12 @@ Takes the input parameter of a map, and returns a tuple, where the first return 
 
     mapArray: map
 
-#### *parseMap*
+#### *mget*
 Takes the input parameters of a map and a key, and returns the value of the input key.
 
 *Syntax*:
 
-    parseMap: map, "color"
+```php
+mget: map, "color"
+```
 
