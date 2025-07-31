@@ -1,0 +1,114 @@
+cat hachi-install.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ─── COLORS ────────────────────────────────────────────────────────────────────
+if [[ -t 1 ]]; then
+  RED='\033[0;31m'; GREEN='\033[0;32m'; CYAN='\033[1;36m'; BOLD='\033[1m'; RESET='\033[0m'
+else
+  RED=''; GREEN=''; CYAN=''; BOLD=''; RESET=''
+fi
+
+error() {
+  echo -e "${RED}error:${RESET} $@" >&2
+  exit 1
+}
+
+info() {
+  echo -e "${CYAN}$@${RESET}"
+}
+
+success() {
+  echo -e "${GREEN}$@${RESET}"
+}
+
+# ─── EMOJI SPINNER ─────────────────────────────────────────────────────────────
+emoji_spinner() {
+  local pid=$1 delay=0.2
+  local -a frames=( "🐾    " "  🐾  " "    🐾" "  🐾  " )
+  tput civis
+  while kill -0 "$pid" &>/dev/null; do
+    for f in "${frames[@]}"; do
+      printf "\r${CYAN}${f}${RESET}"
+      sleep "$delay"
+    done
+  done
+  printf "\r\033[K"
+  tput cnorm
+}
+
+# ─── DEPENDENCY CHECKS ──────────────────────────────────────────────────────────
+
+command -v git    >/dev/null || error "git is required. Install it with 'apt install git' or 'brew install git'."
+command -v make   >/dev/null || error "make is required. Install it with 'apt install make' or 'brew install make'."
+
+# Find a C++20-capable clang++
+check_cpp20() {
+  local COMP=$1
+  echo 'int main(){ static_assert(__cplusplus>=202002L); }' \
+    | "$COMP" -std=c++20 -xc++ - -o /dev/null 2>/dev/null
+}
+
+CXX=""
+for cand in clang++ clang-15 clang-14 clang-13 clang-12 clang-11 clang-10; do
+  if command -v "$cand" &>/dev/null && check_cpp20 "$cand"; then
+    CXX="$cand"
+    break
+  fi
+done
+
+if [[ -z "$CXX" ]]; then
+  error "A C++20-capable clang++ is required (clang-10+).
+Please install one with:
+  • Ubuntu/Debian:  apt install clang-10
+  • macOS (Homebrew): brew install llvm@10
+…and ensure that 'clang++-10' (or higher) is on your PATH."
+fi
+
+info "Using compiler: $CXX (supports C++20)"
+
+# ─── INSTALLATION PATHS ───────────────────────────────────────────────────────
+LOCAL_BIN="$HOME/.local/bin"
+LOCAL_LIB="$HOME/.local/lib/hachi"
+REPO_DIR="$HOME/.local/hachi"
+
+mkdir -p "$LOCAL_BIN" "$LOCAL_LIB"
+
+# ─── CLONE WITH SPINNER ───────────────────────────────────────────────────────
+info "→ Cloning Hachi…"
+git clone https://gitlab.com/hachi-lang/hachi.git "$REPO_DIR" & pid=$!
+emoji_spinner $pid
+wait $pid || error "git clone failed."
+
+# ─── BUILD WITH SPINNER ───────────────────────────────────────────────────────
+info "→ Building Hachi…"
+( cd "$REPO_DIR" && make CXX="$CXX" ) & pid=$!
+emoji_spinner $pid
+wait $pid || error "build failed."
+
+# ─── INSTALL ──────────────────────────────────────────────────────────────────
+info "→ Installing…"
+cp "$REPO_DIR/hachi" "$LOCAL_BIN/"
+cp -r "$REPO_DIR/lib/"* "$LOCAL_LIB/"
+
+# ─── CLEANUP ──────────────────────────────────────────────────────────────────
+rm -rf "$REPO_DIR"
+
+# ─── ENVIRONMENT SETUP ───────────────────────────────────────────────────────
+PROFILE="$HOME/.bashrc"
+[[ -n "${ZSH_VERSION-:-}" ]] && PROFILE="$HOME/.zshrc"
+
+if ! grep -q 'HACHI_LIB' "$PROFILE"; then
+  {
+    echo ""
+    echo "# Hachi configuration"
+    echo "export HACHI_LIB=\"$LOCAL_LIB\""
+    echo "export PATH=\"\$HOME/.local/bin:\$PATH\""
+  } >> "$PROFILE"
+  info "Added HACHI_LIB and ~/.local/bin to $PROFILE"
+fi
+
+success "\n🐺  Hachi installed successfully!
+→ Restart your shell or run: ${BOLD}source $PROFILE${RESET}
+→ Verify with: ${BOLD}hachi -v${RESET}\n"
+
