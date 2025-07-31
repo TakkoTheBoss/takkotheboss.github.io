@@ -2,14 +2,7 @@
 import { Code } from 'astro/components'
 import Layout from '../layouts/Base.astro';
 
-const INSTALL = `# Clone the repository
-git clone https://gitlab.com/hachi-lang/hachi
-# Navigate to the directory
-cd hachi
-# Install Hachi executable
-make
-# Check version
-hachi -v`
+const INSTALL = `curl -fsSL https://bun.sh/install | bash`
 
 const CODE = `>@ "so",
 >@ "fmt"
