@@ -1,4 +1,3 @@
-cat hachi-install.sh
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -111,4 +110,3 @@ fi
 success "\n🐺  Hachi installed successfully!
 → Restart your shell or run: ${BOLD}source $PROFILE${RESET}
 → Verify with: ${BOLD}hachi -v${RESET}\n"
-

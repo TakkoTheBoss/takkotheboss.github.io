@@ -4,77 +4,59 @@ title: Introduction to Hachi
 
 ![Hachi Logo](/hachi_mascot.png "Hachiko!")
 
-# The Hachi Programming Language
-**_Move Fast and Make Things_**
+Because Programming Shouldn’t Be a Chore
 
-Hachi aims to be a more dynamic-feeling & high(er-ish)-level language while delivering the performance of a compiled one. It's a memory safe and statically typed compiled language. And it's pretty dope bro. Core features are functional and operational, it's just currently undergoing semi-rapid development of it's core library. It takes what I call the "Bucket of Legos" approach, where language components are simple to use and easy to implement by means of just sorta sticking things together in whatever programming patterns you want to (Object-oriented, Procedural, Functional, etc for the most part). It's not very rigid, rather more of a free-spirited style of language.
+****
 
-Hachi exists to help me out personally with some work I was doing, and to be comfortable for me personally. I envisioned something between Python and Go, that was simple and didn't have too many rules or complexities which have plagued me with some other languages. My style and way of doing things may not suit most. And yes, hachi is something I **actually** use in my own work. It started off as an experiment in abstracting some C & C++ compilation frankenstein stuff I was attempting, and I realized that this could be so much more than a point-of-concept for a one-off use case. And since I don't do much development in public, this is my first real go at an open-source project. I'm honestly happy if I'm the only one who uses it, however I hope it someday helps someone else out (maybe just even 1 person).
+Hachi is designed to feel dynamic and expressive like a higher-level language while delivering the performance of a compiled one. It is memory safe, statically typed, and compiled. The core features are fully functional, and the language is in active development as its standard library grows.
 
-Hachi is under rapid development, and I've done my best to yeet as many foot-guns possible at this time.
+The philosophy behind Hachi is simple: it should feel like a bucket of bucket of Legos. Language components are straightforward, flexible, and can be combined in whatever style makes sense to you. Whether you prefer object-oriented, procedural, or functional patterns, Hachi avoids rigidity and encourages a free-form style of programming.
 
-Hachi is named after my dog, Hachiko. That's it. He's a very free-spirited and unencumbered husky, and the Hachi language intends to be the same. Hence the husky mascot and my loosey-goosey way of doing things here.
+Hachi started as a personal experiment to simplify and abstract some messy C and C++ compilation work. Over time, it became clear that it could grow into something more than a one-off project. While it was originally built to suit my own needs, I decided to make it open source with the hope that others might find it useful as well.
 
-![Hachi Logo](/hachi-help-screen.png "Hachi Help Screen" )
+The language is named after my dog, Hachiko, a free-spirited husky whose personality matches the language’s design philosophy. Hachi is meant to feel unencumbered, straightforward, and fun to use.
 
 ## Compatibility
-The Hachi language itself requires zero external dependencies. As easy as installing `clang++` then running `make` in the root dir of this repo. Some modules you may choose to use can require additional dependencies.
 
-*Note: Ensure `clang++` and at least C++11 is available to build it.*
+Hachi requires no external dependencies. Installing `clang++` and running `make` in the repository root is enough to get started. Some optional modules may require additional dependencies.
 
-Hachi has been successfully tested on Linux.
+Make sure you have `clang++` with at least C++11 support installed.
+
+Hachi has been tested successfully on Linux.
 
 ## Features
-These are current features present in this implementation:
 
 ### Standard Features
-- Your basic data types `Bool`, `Int`, `Dub`, `String`
-- All the operators you'd expect (`+`, `-`, `*`, `/`, `%`, `&&`, `>`, `<`, `=>`, etc)
-- Both single and multi-line comments
-- Flow control (conditional, loops)
-- Constants
-- Data structs
-- Tuples
-- Int arrays
-- String arrays
-- Hash Maps
-- Functions
-- Strings and various String operations
-- User input
-- Running system commands
-- AnyT type (equivalent to templates or generics in other languages)
-- Pass-by-reference
-- Flexible programming patterns
-- Operator overloading
-- File importing
-- Anonymous functions
+
+* Primitive data types: `Bool`, `Int`, `Dub`, `String`
+* Standard operators: `+`, `-`, `*`, `/`, `%`, `&&`, `>`, `<`, `=>`, and others
+* Single-line and multi-line comments
+* Flow control: conditionals and loops
+* Constants
+* Data structs, tuples, and arrays (`IntArray`, `StringArray`)
+* Hash maps
+* Functions
+* String operations and user input
+* Running system commands
+* `AnyT` type (similar to generics or templates)
+* Pass-by-reference
+* Operator overloading
+* File importing
+* Anonymous functions
 
 ### Unique Hachi Features
-- Run C++ code inside of Hachi files.
-- Auto-Free memory management.
-- Creating Variables is implicit, set it and forget it.
-- Type inference, so no need to specify the type.
-- To call a function which doesn't take any arguments is identical to accessing a variable.
-    - Calling function `function`
-    - Accessing var `var1`
-- To call a function which takes an argument is identical to creating a variable.
-    - Calling function w/parameter:
-        - `function1: param1`
-    - Creating var:
-        - `var1: lol`
-- To call function with multiple parameters is identical to creating a tuple.
-    - Calling function w/multiple parameters:
-        - `function1: param1,param2,param3`
-    - Creating tuple var:
-        - `tupleVar: item1,item2,item3`
-- No need to separate with semicolon.
-- No double-equals `==`, uses `=` for comparison.
-- Colon (`:`) used for assignment.
-- Tuples, structs and class objects are all handled similarly in the code.
-- A function can be sent arguments from the either the left or right side, ***OR*** on both sides.
-    - Left and right-side inputs:
-        - (`inputLeft.function: inputRight`)
-- Control flow is performed via operators instead of keywords.
-    - Examples:
-        - `@` for **loop**
-        - `?` for **if**
+
+* Embed C++ code directly inside Hachi files
+* Auto-Free memory management with automatic deallocation when values go out of scope
+* Implicit variable creation with type inference
+* Functions with no arguments are accessed like variables
+* Assignments and function calls use a colon (`:`) instead of `=`
+* Tuples, structs, and class-like objects share a unified syntax
+* Arguments can be passed to functions from either side: `(inputLeft.function: inputRight)`
+* Control flow uses operators instead of keywords:
+
+  * `@` for loops
+  * `?` for conditionals
+
+Hachi aims to provide powerful features without unnecessary complexity, encouraging experimentation and flexibility while retaining the speed and safety of a compiled language.
+
